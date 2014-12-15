@@ -16,11 +16,8 @@ def clean_jsonified_dir():
     os.remove('./jsonified/transactions.json')
 
 def main(argv):
-  clean_jsonified_dir()
 
-  inputdir = '' #'./textified/20130926.pdf_deposits'
-  output_filename = './jsonified/transactions.json'
-  fp = open(output_filename, 'w')
+  inputdir = '' #'./textified/'
   try:
     opts, args = getopt.getopt(argv,"hi:o:",["idir="])
   except getopt.GetoptError:
@@ -34,10 +31,14 @@ def main(argv):
       inputdir = arg
 
   print 'Input directory is "',inputdir,'"'
+  clean_jsonified_dir()
+  output_filename = './jsonified/transactions.json'
+  fp = open(output_filename, 'w')
 
   if not os.path.exists(inputdir):
     print 'Directory "',inputdir,'" does not exist. Exiting.'
 
+  print "Processing text entries into JSON format."
   index_count = 0
   for bank_statement in os.listdir(inputdir):
     inputfile = open(inputdir + bank_statement, 'r')
@@ -61,9 +62,14 @@ def main(argv):
       fp.write('\n')
 
       index_count += 1
-    inputfile.close
 
-  fp.close
+    print bank_statement, "complete."
+    inputfile.close()
+
+  fp.close()
+
+  if os.path.exists(output_filename):
+    print output_filename, "successfully created!"
 if __name__ == "__main__":
   main(sys.argv[1:])
 
