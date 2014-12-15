@@ -26,7 +26,74 @@ total 1568
 -rw-r-----@  1 501  20  44604 Dec 12 17:48 20141128.pdf
 ```
 
-Run parse_pdf.sh. This takes all of the pdfs and puts them into text versions, without the unnecessary text about your address, page numbers, account number, etc. These text versions reside in "./textified/".
+Run parse_pdf.sh. This takes all of the pdfs and puts them into text versions, without the unnecessary text about your address, page numbers, account number, etc.
+
+output from parse_pdf.sh:
+```
+$ ./parse_pdf.sh ./
+converting 20130926.pdf pdf to text
+getting deposits and additions for 20130926.pdf
+getting withdrawals for 20130926.pdf
+cleaning up textified pdf temporary file
+converting 20131025.pdf pdf to text
+getting deposits and additions for 20131025.pdf
+getting withdrawals for 20131025.pdf
+cleaning up textified pdf temporary file
+converting 20131127.pdf pdf to text
+getting deposits and additions for 20131127.pdf
+getting withdrawals for 20131127.pdf
+cleaning up textified pdf temporary file
+converting 20131226.pdf pdf to text
+getting deposits and additions for 20131226.pdf
+getting withdrawals for 20131226.pdf
+cleaning up textified pdf temporary file
+converting 20140128.pdf pdf to text
+getting deposits and additions for 20140128.pdf
+getting withdrawals for 20140128.pdf
+cleaning up textified pdf temporary file
+converting 20140227.pdf pdf to text
+getting deposits and additions for 20140227.pdf
+getting withdrawals for 20140227.pdf
+cleaning up textified pdf temporary file
+converting 20140326.pdf pdf to text
+getting deposits and additions for 20140326.pdf
+getting withdrawals for 20140326.pdf
+cleaning up textified pdf temporary file
+converting 20140424.pdf pdf to text
+getting deposits and additions for 20140424.pdf
+getting withdrawals for 20140424.pdf
+cleaning up textified pdf temporary file
+converting 20140527.pdf pdf to text
+getting deposits and additions for 20140527.pdf
+getting withdrawals for 20140527.pdf
+cleaning up textified pdf temporary file
+converting 20140625.pdf pdf to text
+getting deposits and additions for 20140625.pdf
+getting withdrawals for 20140625.pdf
+cleaning up textified pdf temporary file
+converting 20140725.pdf pdf to text
+getting deposits and additions for 20140725.pdf
+getting withdrawals for 20140725.pdf
+cleaning up textified pdf temporary file
+converting 20140826.pdf pdf to text
+getting deposits and additions for 20140826.pdf
+getting withdrawals for 20140826.pdf
+cleaning up textified pdf temporary file
+converting 20140925.pdf pdf to text
+getting deposits and additions for 20140925.pdf
+getting withdrawals for 20140925.pdf
+cleaning up textified pdf temporary file
+converting 20141027.pdf pdf to text
+getting deposits and additions for 20141027.pdf
+getting withdrawals for 20141027.pdf
+cleaning up textified pdf temporary file
+converting 20141128.pdf pdf to text
+getting deposits and additions for 20141128.pdf
+getting withdrawals for 20141128.pdf
+cleaning up textified pdf temporary file
+```
+
+These text versions of your pdfs now reside in "./textified/".
 
 ```
 $ ls -n textified
