@@ -63,3 +63,44 @@ total 392
 -rw-r--r--  1 501  20   8086 Dec 12 20:20 20141128.pdf_withdrawals
 ```
 
+Now run json_maker.py like so:
+
+```
+tBoolean@toms-imac $ ./json_maker.py -i ./textified/
+Input directory is " ./textified/ "
+Removing ./jsonified/transactions.json
+Processing text entries into JSON format.
+20130926.pdf_deposits complete.
+20130926.pdf_withdrawals complete.
+20131025.pdf_deposits complete.
+20131025.pdf_withdrawals complete.
+20131127.pdf_deposits complete.
+20131127.pdf_withdrawals complete.
+20131226.pdf_deposits complete.
+20131226.pdf_withdrawals complete.
+20140128.pdf_deposits complete.
+20140128.pdf_withdrawals complete.
+20140227.pdf_deposits complete.
+20140227.pdf_withdrawals complete.
+20140326.pdf_deposits complete.
+20140326.pdf_withdrawals complete.
+20140424.pdf_deposits complete.
+20140424.pdf_withdrawals complete.
+20140527.pdf_deposits complete.
+20140527.pdf_withdrawals complete.
+20140625.pdf_deposits complete.
+20140625.pdf_withdrawals complete.
+20140725.pdf_deposits complete.
+20140725.pdf_withdrawals complete.
+20140826.pdf_deposits complete.
+20140826.pdf_withdrawals complete.
+20140925.pdf_deposits complete.
+20140925.pdf_withdrawals complete.
+20141027.pdf_deposits complete.
+20141027.pdf_withdrawals complete.
+20141128.pdf_deposits complete.
+20141128.pdf_withdrawals complete.
+./jsonified/transactions.json successfully created!
+```
+
+Notice that it now has a file called "transactions.json" in the "./jsonified/" folder.
