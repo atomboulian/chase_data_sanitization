@@ -66,7 +66,7 @@ total 392
 Now run json_maker.py like so:
 
 ```
-tBoolean@toms-imac $ ./json_maker.py -i ./textified/
+$ ./json_maker.py -i ./textified/
 Input directory is " ./textified/ "
 Removing ./jsonified/transactions.json
 Processing text entries into JSON format.
