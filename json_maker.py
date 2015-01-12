@@ -23,11 +23,12 @@ def jsonify_from_inputdir(inputdir,ofp):
   print "Processing text entries into JSON format."
   index_count = 0
   for bank_statement in os.listdir(inputdir):
-    if bank_statement.endswith('deposits'):
+    if bank_statement.endswith('_deposits'):
       index_type = "deposits"
-    elif bank_statement.endswith('withdrawals'):
+    elif bank_statement.endswith('_withdrawals'):
       index_type = "withdrawals"
-    elif bank_statement.endswith('e_withdrawals'):
+    elif bank_statement.endswith('_ewithdrawals'):
+      print "e_withdrawals index_type setting"
       index_type = "e_withdrawals"
 
     fj = FileJsonifier(inputdir + bank_statement, ofp, index_type, index_count)

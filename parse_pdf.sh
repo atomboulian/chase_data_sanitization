@@ -54,7 +54,9 @@ do
 
   echo "getting Online purchases for ${pdfname}"
   LC_ALL=C sed -n '/^ELECTRONIC WITHDRAWALS/,/Total Electronic Withdrawals.*$/p' textified_pdf \
-    | sed '/^\s*$/d' | egrep "^[0-9]" > ./textified/$(basename $pdfname)_e_withdrawals
+    | sed '/^\s*$/d' | egrep "^[0-9]" > ./textified/$(basename $pdfname)_ewithdrawals
+
   echo "cleaning up textified pdf temporary file"
   rm -f ./textified_pdf
+  echo "====================="
 done

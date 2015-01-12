@@ -25,6 +25,14 @@ class FileJsonifier:
 
 
   def jsonify(self):
+    if self.file_type == "csv":
+      self.__jsonify_csv()
+    elif self.file_type =="pdf":
+      self.__jsonify_pdf()
+    else:
+      raise "Jsonification is not supported for this filetype."
+
+  def __jsonify_pdf(self):
     for line in self.ifp:
       date = re.search('^[0-9]{2}\/[0-9]{2}\s+', line).group(0).rstrip()
       date = self.file_name[:4] + '-' + date.replace("/", "-")
@@ -43,5 +51,5 @@ class FileJsonifier:
     print self.file_name, "complete."
     self.ifp.close()
 
-  def __jsonify_csv():
+  def __jsonify_csv(self):
     print "good stuff"
