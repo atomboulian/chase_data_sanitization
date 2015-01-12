@@ -19,6 +19,7 @@ def clean_jsonified_dir():
 def jsonify_from_inputdir(inputdir,ofp):
   if not os.path.exists(inputdir):
     print 'Directory "',inputdir,'" does not exist. Exiting.'
+    sys.exit(2)
 
   print "Processing text entries into JSON format."
   index_count = 0
@@ -31,7 +32,7 @@ def jsonify_from_inputdir(inputdir,ofp):
       print "e_withdrawals index_type setting"
       index_type = "e_withdrawals"
 
-    fj = FileJsonifier(inputdir + bank_statement, ofp, index_type, index_count)
+    fj = FileJsonifier(inputdir + bank_statement, ofp, index_count, index_type)
     fj.jsonify()
 
     index_count = fj.index_count
@@ -40,10 +41,23 @@ def jsonify_from_inputdir(inputdir,ofp):
 
   ofp.close()
 
+def jsonify_from_inputfile(inputfile,ofp):
+  if not os.path.exists(inputfile):
+    print "Inputfile {} does not exist. Exiting."
+    sys.exit(2)
+
+  print "Processing CSV entries into JSON format."
+  fj = FileJsonifier(inputfile, ofp)
+  fj.jsonify()
+
+  ofp = fj.ofp
+  del fj
+  ofp.close()
+
 def usage():
-    print "json_maker -d <directory>"
-    print "OR"
-    print "json_maker -f <csvinputfile>"
+  print "json_maker -d <directory>"
+  print "OR"
+  print "json_maker -f <csvinputfile>"
 
 def main(argv):
 
@@ -76,7 +90,10 @@ def main(argv):
   output_filename = './jsonified/transactions.json'
   ofp = open(output_filename, 'w')
 
-  jsonify_from_inputdir(inputdir,ofp)
+  if inputdir:
+    jsonify_from_inputdir(inputdir,ofp)
+  if inputfile:
+    jsonify_from_inputfile(inputfile,ofp)
 
   if os.path.exists(output_filename):
     print output_filename, "successfully created."
