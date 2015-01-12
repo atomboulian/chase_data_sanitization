@@ -58,13 +58,13 @@ class FileJsonifier:
       trans_reader = csv.DictReader(csvfile)
       print trans_reader.fieldnames
       for row in trans_reader:
-        json.dump({"index":{"_index": "transactions","_type": row['Type'], \
-            "_id": (trans_reader.line_num - 1)}}, self.ofp)
+        json.dump({"index":{"_index":"transactions","_type":row['Type'], \
+            "_id":(trans_reader.line_num - 1)}}, self.ofp)
         self.ofp.write('\n')
-        json.dump({"Posting Date": row['Posting Date'],\
-            "Description": row['Description'], "Amount": row['Amount'],\
-            "Balance": row['Balance'],\
-            "Check or Slip #": row['Check or Slip #']}, self.ofp)
+        json.dump({"Posting Date":row['Posting Date'],\
+            "Description":row['Description'],"Amount":row['Amount'],\
+            "Balance":row['Balance'],\
+            "Check or Slip #":row['Check or Slip #']}, self.ofp)
         self.ofp.write('\n')
 
       print self.file_name,"complete."
