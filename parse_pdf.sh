@@ -1,8 +1,14 @@
 #!/bin/bash
 
+function usage(){
+  echo "Usage: $0 -i <input directory> -o <output directory>" 1>&2; exit 1;
+}
 idir=$(pwd)
-while getopts "i:o:" opt; do
+while getopts "hi:o:" opt; do
   case $opt in
+    h)
+      usage
+      ;;
     i)
       idir=$OPTARG
       echo "Input directory of pdfs is $idir"
