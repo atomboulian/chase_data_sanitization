@@ -1,7 +1,7 @@
 chase_data_sanitization
 =======================
 
-This code converts chase statement pdf documents to text, and then to JSON to import to ElasticSearch, and to visually analyze with Kibana.
+This code converts chase statement pdf documents to text, and then to JSON to import to ElasticSearch, and to visually analyze with Kibana. It also converts csv documents to JSON to import to ElasticSearch.
 
 ## Get Started
 Download all your pdfs from Chase, and save them off into a single folder with the following date format: "YYYYMMdd.pdf". Navigate to that folder.
